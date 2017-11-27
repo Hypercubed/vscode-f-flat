@@ -1,0 +1,72 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "f-flat",
+	"patterns": [
+		{
+			"include": "#strings"
+		},
+		{
+            "match": "^\\s*\\d+\\s*$",
+            "name": "constant.numeric"
+		},
+		{
+			"name": "punctuation",
+			"match": ";"
+		},
+		{  
+			"begin": "/\\*",
+			"end": "\\*/",
+			"name": "comment.block"
+		},
+		{
+			"match": "(?://).*$\n?",
+			"name": "comment.line"
+		},
+		{
+			"match": "([\\w\\-\\?\\+\\/\\*\\~\\!]*):",
+			"name": "variable.f-flat"
+		},
+		{
+			"match": "([\\[\\]\\{\\}\\(\\)])",
+			"name": "punctuation"
+		},
+		{
+			"match": "\\b(?:dup|drop|eval|cmp|choose)\\b",
+			"name": "entity.name.class"
+		},
+		{
+			"match": "\\b(?:string(\\?)?)\\b",
+			"name": "entity.name.type"
+		},
+		{
+			"match": "\\b(?:swap|slip|dip|over|keep)\\b",
+			"name": "keyword.control.f-flat"
+		},
+		{
+			"name": "constant.language.f-flat",
+			"match": "\\b(?:true|false|null)\\b"
+		},
+		{
+			"name": "constant.numeric.f-flat",
+			"match": "\\b(?:infinity|i)\\b"
+		},
+		{
+			"match": "([\\w\\*\\+\\-\\:\\;\\/\\<\\>])",
+			"name": "entity.name.function.f-flat"
+		}
+	],
+	"repository": {
+		"strings": {
+			"name": "string.quoted.f-flat",
+			"begin": "('|\")",
+			"end": "('|\")",
+			"patterns": [
+				{
+					"name": "constant.character.escape.f-flat",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.fflat"
+}

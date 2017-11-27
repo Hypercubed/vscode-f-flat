@@ -1,0 +1,26 @@
+{
+    "name": "f-flat",
+    "displayName": "f-flat",
+    "description": "f-flat programming language",
+    "version": "0.0.1",
+    "publisher": "hypercubed",
+    "engines": {
+        "vscode": "^1.18.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "f-flat",
+            "aliases": ["f-flat"],
+            "extensions": ["ff"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "f-flat",
+            "scopeName": "source.fflat",
+            "path": "./syntaxes/f-flat.tmLanguage.json"
+        }]
+    }
+}
